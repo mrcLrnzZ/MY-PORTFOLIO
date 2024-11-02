@@ -15,6 +15,14 @@
 }
 
 
+#page5 {
+    min-height: 50vh;
+    background: url(bgs/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+   }
+
+
 
 .header{
     position: fixed;

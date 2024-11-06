@@ -44,10 +44,12 @@ span{
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
-    background-color: #000000;
+    background-color: #080114;
     border-left: 2px solid aqua;
     right: -8px;
     animation: cursor .8s infinite, typing 20s steps(14) infinite;
+    top: 0;
+
 }
 
 @keyframes cursor {

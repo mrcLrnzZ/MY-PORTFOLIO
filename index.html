@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script> <!--cdn na nag aanimate-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Display:wght@400..800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -15,7 +16,7 @@
 
     <!--landing pagee-->
     <div class="h-screen w-full bg-[url(./bgs/bg.jpg)] bg-no-repeat bg-cover bg-center">
-        <header class="fixed top-0 left-0 w-full p-5 bg-transparent flex items-center backdrop-blur-md z-50 justify-end">
+        <header class="fixed top-0 left-0 w-full p-5 bg-transparent flex items-center backdrop-blur-md justify-end z-50">
             <a href="#" class="text-[#00bfff] no-underline absolute left-10 hidden sm:block">Lrnz</a>
         
             <!-- navbar -->
@@ -27,25 +28,75 @@
                 <a class="px-3 hover:text-[#00ffff]" href="#page5">Contact Me</a>
             </nav>
 
-            <button class="sm:hidden w-6">
+            <button id="btn" class="sm:hidden w-6 -z-50">
                 <img src="./images/menu.svg" alt="">
             </button>
         </header>
         
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
 
-     <div class="flex flex-col justify-center items-center sm:flex-row-reverse h-screen sm:justify-between px-6 sm:px-36 text-white " id="page1">
+        <div id="menu" class=" h-screen w-64 fixed text-white bg-black right-0 sm:hidden flex flex-col justify-center items-center leading-10 transform translate-x-full transition-transform duration-300 top-0 z-50">
+                <a class="px-3 hover:text-[#00ffff]" href="#page1">Home</a>
+                <a class="px-3 hover:text-[#00ffff]" href="#page2">About Me</a>
+                <a class="px-3 hover:text-[#00ffff]" href="#page3">Skills</a>
+                <a class="px-3 hover:text-[#00ffff]" href="#page4">Projects</a>
+                <a class="px-3 hover:text-[#00ffff]" href="#page5">Contact Me</a>
+        </div>
+
+        <script>
+            const btn = document.getElementById('btn')
+            const me = document.getElementById('menu')
+            const o = document.getElementById('overlay')
+
+            btn.addEventListener('click', () => {
+                me.classList.toggle('translate-x-full') 
+                        o.classList.toggle('hidden')
+
+                })
+
+                o.addEventListener('click', () => {
+                     me.classList.add('translate-x-full')
+                        o.classList.add('hidden')
+                })
+
+                me.addEventListener('click', () => {
+                    o.classList.add('hidden') 
+                    me.classList.add('translate-x-full')
+                        
+                })
+
+
+        </script>
+
+     <div class="flex flex-col justify-center items-center sm:flex-row-reverse h-screen sm:justify-between px-6 sm:px-36 text-white sm:mt-100 " id="page1">
      
     <div class= "mr-- sm:mr-24">
         <img src="./images/pfp.png" alt="Your Image"  class="w-44 sm:w-80 rounded-full">
         <br>
     </div>
 
-     <div class="text-center sm:text-left">
+     <div class="text-center sm:text-left sm:-mt-[100px]">
         <h1 class="text-3xl sm:text-5xl font-bold leading-tight sm:leading-[64px]">Hi there!, <br> I' am <span class="text-cyan-400">Gillian Marc M. Lorenzo</span> </h1>
-        <p class="animated-text"> I am a <span>    </span></p>
-     </div>
-     
-     
+       
+    <div id="typed-strings" >
+
+         <p></p>
+         <p>Computer Science Student</p>
+         <p>Car enthusiast</p>
+         <p>asdfgadasdad</p>
+         <p>hgjfgdfghhj</p>
+         <p>67ifhgdfg6i</p>
+         <p>nbm,cxvbcbn,</p>
+         <p>asdfhgsadhfdh</p>
+         <p>0123456789</p>
+         <p>9876543210</p>
+
+
+         
+        </div>
+            <h1 class="font-bold text-3xl">I am <span id="typed" class="text-cyan-400"><!-- content will be typed here --></span></h1>
+         </div>
+
     </div>
 
     <!--about me page-->
@@ -80,6 +131,7 @@
         <p class="text-white text-center text-4xl pt-16">Contact me</p>
        
     </div>
+    <script src="./type.js"></script>
 
 </body>
 </html>

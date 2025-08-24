@@ -15,50 +15,67 @@
 
     <!--landing pagee-->
     <div class="h-screen w-full bg-[url(./bgs/bg.jpg)] bg-no-repeat bg-cover bg-center">
-        <header class="fixed top-0 left-0 w-full p-5 bg-transparent flex items-center flex backdrop-blur-md z-50 justify-end">
+        <header class="fixed top-0 left-0 w-full p-5 bg-transparent flex items-center backdrop-blur-md z-50 justify-end">
             <a href="#" class="text-[#00bfff] no-underline absolute left-10 hidden sm:block">Lrnz</a>
         
-            <nav class="text-xs sm:text-sm text-[#00bfff] font-medium flex space-x-10 mr-16">
+            <!-- navbar -->
+            <nav class=" hidden sm:flex text-xs sm:text-sm text-[#00bfff] font-medium flex space-x-10 mr-16">
                 <a class="px-3 hover:text-[#00ffff]" href="#page1">Home</a>
                 <a class="px-3 hover:text-[#00ffff]" href="#page2">About Me</a>
                 <a class="px-3 hover:text-[#00ffff]" href="#page3">Skills</a>
                 <a class="px-3 hover:text-[#00ffff]" href="#page4">Projects</a>
                 <a class="px-3 hover:text-[#00ffff]" href="#page5">Contact Me</a>
             </nav>
+
+            <button class="sm:hidden w-6">
+                <img src="./images/menu.svg" alt="">
+            </button>
         </header>
         
 
-     <div class="text-[#f0ffff] sm:text-5xl text-3xl sm:pt-64 pt-96 sm:pl-36 pl-24 font-bold sm:leading-[64px] leading-[36px]" id="page1">
-        <p>Hi there!, <br> Im <span>Gillian Lorenzo</span></p>
-        <p class="animated-text"> I am a <span></span></p>
-
-     </div>
-     <div class= "absolute">
-        <img src="./images/Screenshot 2024-10-30 211329.png" alt="Your Image"  class="sm:w-80 rounded-full w-44 sm:mt-[-300px] mt-[-350px] ml-[150px] sm:ml-[900px]">
+     <div class="flex flex-col justify-center items-center sm:flex-row-reverse h-screen sm:justify-between px-6 sm:px-36 text-white " id="page1">
+     
+    <div class= "mr-- sm:mr-24">
+        <img src="./images/pfp.png" alt="Your Image"  class="w-44 sm:w-80 rounded-full">
+        <br>
     </div>
+
+     <div class="text-center sm:text-left">
+        <h1 class="text-3xl sm:text-5xl font-bold leading-tight sm:leading-[64px]">Hi there!, <br> I' am <span class="text-cyan-400">Gillian Marc M. Lorenzo</span> </h1>
+        <p class="animated-text"> I am a <span>    </span></p>
+     </div>
+     
+     
     </div>
 
     <!--about me page-->
     <div class="relative pl-0 pt-0 min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('bgs/bg1.jpg');" id="page2">
         <p class="text-white text-center text-4xl pt-16">About Me</p>
-            <div class="flex items-start">
-                 <img src="./images/profile.jpg" class="rounded-xl ml-32 mt-20">
-                 <div class="text-white max-w-md justify-center mt-20 ml-20">
-                 <p class="text-xl"> My name is Gillian Marc M. Lorenzo. I am currently pursuing a Bachelor of Science in Computer Science at the University of Caloocan City. My academic journey has fueled my passion for exploring various aspects of computer science, with a particular interest in areas such as software development, web development, and Arduinos. I am eager to contribute my growing expertise to impactful projects and continuously expand and improve my skills in programming and problem-solving..</p>
+          
+        <div class="flex flex-col items-center sm:flex-row sm:justify-center gap-9 sm:mt-[120px] ">
+            <div class="">
+                <img src="./images/alden.png" class="rounded-xl h-[300px] mt-10 sm:mt-0">
+            </div>
+                 <div class="text-white max-w-md flex justify-center sm:items-end mx-10">
+                 <p class="text-sm sm:text-xl"> My name is Gillian Marc M. Lorenzo. I am currently pursuing a Bachelor of Science in Computer Science at the University of Caloocan City. My academic journey has fueled my passion for exploring various aspects of computer science, with a particular interest in areas such as software development, web development, and Arduinos. I am eager to contribute my growing expertise to impactful projects and continuously expand and improve my skills in programming and problem-solving..</p>
                 </div>
+
              </div>
     </div>
 
+    <!-- Skills -->
     <div class="relative pl-0 pt-0 min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('bgs/bg1.jpg');" id="page3">
         <p class="text-white text-center text-4xl pt-16">My skills</p>
        
     </div>
 
+    <!-- projects -->
     <div class="relative pl-0 pt-0 min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('bgs/bg1.jpg');" id="page4">
         <p class="text-white text-center text-4xl pt-16">Projects</p>
        
     </div>
 
+    <!-- Contact -->
     <div class="relative pl-0 pt-0 min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('bgs/bg1.jpg');" id="page5">
         <p class="text-white text-center text-4xl pt-16">Contact me</p>
        

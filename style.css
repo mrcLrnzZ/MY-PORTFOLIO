@@ -3,9 +3,106 @@
   font-weight: 900;
   font-size: 1.3em;
   color: aqua;
-  
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-animate.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different animation delays for staggered effect */
+.scroll-animate.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.scroll-animate.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.scroll-animate.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.scroll-animate.delay-400 {
+  transition-delay: 0.4s;
+}
+
+.scroll-animate.delay-500 {
+  transition-delay: 0.5s;
+}
+
+/* Slide in from left */
+.scroll-animate.slide-left {
+  transform: translateX(-50px);
+}
+
+.scroll-animate.slide-left.animate {
+  transform: translateX(0);
+}
+
+/* Slide in from right */
+.scroll-animate.slide-right {
+  transform: translateX(50px);
+}
+
+.scroll-animate.slide-right.animate {
+  transform: translateX(0);
+}
+
+/* Scale animation */
+.scroll-animate.scale {
+  transform: scale(0.8);
+}
+
+.scroll-animate.scale.animate {
+  transform: scale(1);
+}
+
+/* Fade in animation */
+.scroll-animate.fade {
+  transform: none;
+}
+
+/* Rotate animation */
+.scroll-animate.rotate {
+  transform: rotate(-10deg) translateY(30px);
+}
+
+.scroll-animate.rotate.animate {
+  transform: rotate(0deg) translateY(0);
+}
+
+/* Bounce animation */
+.scroll-animate.bounce {
+  transform: translateY(50px) scale(0.9);
+}
+
+.scroll-animate.bounce.animate {
+  animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translateY(50px) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }

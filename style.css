@@ -221,3 +221,62 @@ html {
 .modal-button:hover::before {
   left: 100%;
 }
+
+/* Mobile Menu Animations */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.3s ease-out forwards;
+}
+
+/* Mobile Menu Button Animation */
+@keyframes menuButtonRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+
+.menu-button-open {
+  animation: menuButtonRotate 0.3s ease-out forwards;
+}
+
+/* Responsive Navbar Improvements */
+@media (max-width: 640px) {
+  .navbar-logo {
+    font-size: 1.125rem;
+  }
+  
+  .navbar-menu {
+    display: none;
+  }
+  
+  .navbar-button {
+    display: flex;
+  }
+}
+
+@media (min-width: 641px) {
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+  
+  .navbar-menu {
+    display: flex;
+  }
+  
+  .navbar-button {
+    display: none;
+  }
+}

@@ -12,18 +12,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="images/keroppi-7.gif" type="image/gif" >
    
+
 </head>
 
 <body>
 
     <div class="h-screen w-full bg-[url(./bgs/bg.jpg)] bg-no-repeat bg-cover bg-center">
         <header class="fixed top-0 left-0 w-full p-4 sm:p-5 bg-transparent flex items-center justify-between backdrop-blur-md z-50">
-            <!-- Logo -->
             <a href="#page1" class="text-[#00bfff] no-underline text-lg sm:text-xl font-bold hover:text-[#00ffff] transition-colors duration-300">
                 Lrnz
             </a>
         
-            <!-- Desktop Navigation -->
             <nav class="hidden sm:flex text-sm lg:text-base text-[#00bfff] font-medium space-x-6 lg:space-x-8">
                 <a class="px-3 py-2 hover:text-[#00ffff] transition-colors duration-300 rounded-md hover:bg-white/10" href="#page1">Home</a>
                 <a class="px-3 py-2 hover:text-[#00ffff] transition-colors duration-300 rounded-md hover:bg-white/10" href="#page2">About Me</a>
@@ -32,7 +31,6 @@
                 <a class="px-3 py-2 hover:text-[#00ffff] transition-colors duration-300 rounded-md hover:bg-white/10" href="#page5">Contact Me</a>
             </nav>
 
-            <!-- Mobile Menu Button -->
             <button id="btn" class="sm:hidden w-8 h-8 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -40,19 +38,15 @@
             </button>
         </header>
         
-        <!-- Mobile Menu Overlay -->
         <div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden z-40 transition-opacity duration-300"></div>
 
-        <!-- Mobile Menu -->
-        <div id="menu" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-black/95 backdrop-blur-md border-l border-white/10 sm:hidden flex flex-col justify-center items-center space-y-8 transform translate-x-full transition-transform duration-300 z-50">
-            <!-- Close Button -->
+        <div id="menu" class="fixed top-0 right-0 h-full w-full max-w-[85vw] bg-black/95 backdrop-blur-md border-l border-white/10 sm:hidden flex flex-col justify-center items-center space-y-8 transform translate-x-full transition-transform duration-300 z-50">
             <button id="closeMenu" class="absolute top-6 right-6 w-8 h-8 flex items-center justify-center bg-white/10 hover:bg-white/20 rounded-lg transition-all duration-300">
                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
             
-            <!-- Menu Items -->
             <a class="px-6 py-3 text-lg font-medium text-white hover:text-[#00ffff] transition-colors duration-300 rounded-lg hover:bg-white/10 w-full text-center" href="#page1">Home</a>
             <a class="px-6 py-3 text-lg font-medium text-white hover:text-[#00ffff] transition-colors duration-300 rounded-lg hover:bg-white/10 w-full text-center" href="#page2">About Me</a>
             <a class="px-6 py-3 text-lg font-medium text-white hover:text-[#00ffff] transition-colors duration-300 rounded-lg hover:bg-white/10 w-full text-center" href="#page3">Skills</a>
@@ -60,19 +54,15 @@
             <a class="px-6 py-3 text-lg font-medium text-white hover:text-[#00ffff] transition-colors duration-300 rounded-lg hover:bg-white/10 w-full text-center" href="#page5">Contact Me</a>
         </div>
 
-        <!-- Enhanced Mobile Menu JavaScript -->
         <script>
-            // Mobile Menu Elements
             const menuBtn = document.getElementById('btn');
             const closeMenuBtn = document.getElementById('closeMenu');
             const mobileMenu = document.getElementById('menu');
             const overlay = document.getElementById('overlay');
             const body = document.body;
 
-            // Menu State
             let isMenuOpen = false;
 
-            // Toggle Menu Function
             function toggleMenu() {
                 isMenuOpen = !isMenuOpen;
                 
@@ -83,14 +73,12 @@
                 }
             }
 
-            // Open Menu Function
             function openMenu() {
                 mobileMenu.classList.remove('translate-x-full');
                 overlay.classList.remove('hidden');
                 body.style.overflow = 'hidden'; // Prevent background scrolling
                 isMenuOpen = true;
                 
-                // Add animation delay for menu items
                 const menuItems = mobileMenu.querySelectorAll('a');
                 menuItems.forEach((item, index) => {
                     item.style.animationDelay = `${index * 0.1}s`;
@@ -98,26 +86,22 @@
                 });
             }
 
-            // Close Menu Function
             function closeMenu() {
                 mobileMenu.classList.add('translate-x-full');
                 overlay.classList.add('hidden');
                 body.style.overflow = 'auto'; // Restore scrolling
                 isMenuOpen = false;
                 
-                // Remove animation classes
                 const menuItems = mobileMenu.querySelectorAll('a');
                 menuItems.forEach(item => {
                     item.classList.remove('animate-slideInRight');
                 });
             }
 
-            // Event Listeners
             menuBtn.addEventListener('click', toggleMenu);
             closeMenuBtn.addEventListener('click', closeMenu);
             overlay.addEventListener('click', closeMenu);
 
-            // Close menu when clicking on menu items
             const menuLinks = mobileMenu.querySelectorAll('a');
             menuLinks.forEach(link => {
                 link.addEventListener('click', () => {
@@ -125,21 +109,18 @@
                 });
             });
 
-            // Close menu on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && isMenuOpen) {
                     closeMenu();
                 }
             });
 
-            // Close menu on window resize (if screen becomes large)
             window.addEventListener('resize', () => {
                 if (window.innerWidth >= 640 && isMenuOpen) { // sm breakpoint
                     closeMenu();
                 }
             });
 
-            // Smooth scrolling for all navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -184,6 +165,8 @@
          </div>
 
     </div>
+    </div>
+
 
     <!--about me page-->
     <div class="relative pl-0 pt-0 h-[500px] bg-cover bg-center bg-no-repeat" style="background-image: url('bgs/bg1.jpg');" id="page2">
@@ -682,6 +665,7 @@
             <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');"></div>
         </div>
     </footer>
+    </div>
 
     <script src="./type.js"></script>
 

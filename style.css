@@ -9,6 +9,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 /* Scroll Animation Classes */
 .scroll-animate {
   opacity: 0;
